@@ -27,6 +27,16 @@ class Data_Base(QtWidgets.QMainWindow):
         self.ui.Addaperson.clicked.connect(self.save_person)
         self.ui.Deleteaperson.clicked.connect(self.delete_person)
         self.ui.Search.clicked.connect(self.search_person)
+        self.ui.NameSurname.text()
+        self.ui.Datebirthday.date().toString("dd.MM.yyyy")
+        self.ui.Height.text()
+        self.ui.Weight.text()
+        self.ui.YesCar.text()
+        self.ui.NoCar.text()
+        self.ui.Cplusplus.text()
+        self.ui.Csharp.text()
+        self.ui.Delphi.text()
+        self.ui.Python.text()
 
     def save_person(self):
         data_list = []
@@ -43,36 +53,25 @@ class Data_Base(QtWidgets.QMainWindow):
 
             row_index += 1
 
-        name = self.ui.NameSurname.text()
-        birhtday = self.ui.Datebirthday.date().toString("dd.MM.yyyy")
-        height = self.ui.Height.text()
-        weight = self.ui.Weight.text()
-        yes_car = self.ui.YesCar.text()
-        no_car = self.ui.NoCar.text()
-        c_plus = self.ui.Cplusplus.text()
-        csharp = self.ui.Csharp.text()
-        delphi = self.ui.Delphi.text()
-        python = self.ui.Python.text()
+        rowCount = self.ui.table_data.rowCount()
+        self.ui.table_data.insertRow(rowCount)
+        self.ui.table_data.setItem(rowCount, 0, QTableWidgetItem(self.ui.NameSurname.text()))
+        self.ui.table_data.setItem(rowCount, 1, QTableWidgetItem(self.ui.Datebirthday.date().toString("dd.MM.yyyy")))
+        self.ui.table_data.setItem(rowCount, 2, QTableWidgetItem(self.ui.Height.text()))
+        self.ui.table_data.setItem(rowCount, 3, QTableWidgetItem(self.ui.Weight.text()))
 
-        if (name, birhtday, height, weight) is not None:
-            rowCount = self.ui.table_data.rowCount()
-            self.ui.table_data.insertRow(rowCount)
-            self.ui.table_data.setItem(rowCount, 0, QTableWidgetItem(name))
-            self.ui.table_data.setItem(rowCount, 1, QTableWidgetItem(birhtday))
-            self.ui.table_data.setItem(rowCount, 2, QTableWidgetItem(height))
-            self.ui.table_data.setItem(rowCount, 3, QTableWidgetItem(weight))
         if self.ui.YesCar.isChecked():
-            self.ui.table_data.setItem(rowCount, 4, QTableWidgetItem(yes_car))
+            self.ui.table_data.setItem(rowCount, 4, QTableWidgetItem(self.ui.YesCar.text()))
         if self.ui.NoCar.isChecked():
-            self.ui.table_data.setItem(rowCount, 4, QTableWidgetItem(no_car))
+            self.ui.table_data.setItem(rowCount, 4, QTableWidgetItem(self.ui.NoCar.text()))
         if self.ui.Cplusplus.isChecked():
-            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(c_plus))
+            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.Cplusplus.text()))
         if self.ui.Csharp.isChecked():
-            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(csharp))
+            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.Csharp.text()))
         if self.ui.Delphi.isChecked():
-            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(delphi))
+            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.Delphi.text()))
         if self.ui.Python.isChecked():
-            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(python))
+            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.Python.text()))
 
         QMessageBox.information(self, "Data added", "You have successfully added the data to the database !")
 
