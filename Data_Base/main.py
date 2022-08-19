@@ -6,6 +6,8 @@ from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.QtGui import *
 from PyQt5 import QtCore, QtWidgets
 
+data_list = []
+
 
 class Data_Base(QtWidgets.QMainWindow):
     def __init__(self):
@@ -39,7 +41,6 @@ class Data_Base(QtWidgets.QMainWindow):
         self.ui.Python.text()
 
     def save_person(self):
-        data_list = []
         row_index = 0
         for person in data_list:
 
