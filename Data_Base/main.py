@@ -1,7 +1,6 @@
 import sys
-import json
 from database import Ui_MainWindow
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QSortFilterProxyModel
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.QtGui import *
 from PyQt5 import QtCore, QtWidgets
@@ -17,14 +16,15 @@ class Data_Base(QtWidgets.QMainWindow):
         # Name window
         self.setWindowTitle("Data Base")
         # Fixing the window and table
-        self.setFixedSize(960, 560)
-        self.ui.table_data.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.setFixedSize(990, 580)
         self.setWindowIcon(QIcon("blue-icon.png"))
         # Hints to the user
         self.ui.Employeesearch.setPlaceholderText("Name and Surname")
         self.ui.NameSurname.setPlaceholderText("Name and Surname")
         self.ui.Height.setPlaceholderText("Height")
         self.ui.Weight.setPlaceholderText("Weight")
+        self.ui.Car.setPlaceholderText("Car and model?")
+        self.ui.City.setPlaceholderText("Your city?")
         # Buttons
         self.ui.Addaperson.clicked.connect(self.save_person)
         self.ui.Deleteaperson.clicked.connect(self.delete_person)
@@ -33,14 +33,17 @@ class Data_Base(QtWidgets.QMainWindow):
         self.ui.Datebirthday.date().toString("dd.MM.yyyy")
         self.ui.Height.text()
         self.ui.Weight.text()
-        self.ui.YesCar.text()
-        self.ui.NoCar.text()
-        self.ui.Cplusplus.text()
+        self.ui.Car.text()
         self.ui.Csharp.text()
         self.ui.Delphi.text()
+        self.ui.Cplusplus.text()
         self.ui.Python.text()
+        self.ui.JavaScript.text()
+        self.ui.PHP.text()
+
 
     def save_person(self):
+
         row_index = 0
         for person in data_list:
 
@@ -50,7 +53,8 @@ class Data_Base(QtWidgets.QMainWindow):
             self.ui.table_data.setItem(row_index, 2, QTableWidgetItem(str(person["height"])))
             self.ui.table_data.setItem(row_index, 3, QTableWidgetItem(str(person["weight"])))
             self.ui.table_data.setItem(row_index, 4, QTableWidgetItem(str(person["car"])))
-            self.ui.table_data.setItem(row_index, 5, QTableWidgetItem(str(person["languages"])))
+            self.ui.table_data.setItem(row_index, 5, QTableWidgetItem(str(person["city"])))
+            self.ui.table_data.setItem(row_index, 6, QTableWidgetItem(str(person["languages"])))
 
             row_index += 1
 
@@ -60,19 +64,21 @@ class Data_Base(QtWidgets.QMainWindow):
         self.ui.table_data.setItem(rowCount, 1, QTableWidgetItem(self.ui.Datebirthday.date().toString("dd.MM.yyyy")))
         self.ui.table_data.setItem(rowCount, 2, QTableWidgetItem(self.ui.Height.text()))
         self.ui.table_data.setItem(rowCount, 3, QTableWidgetItem(self.ui.Weight.text()))
+        self.ui.table_data.setItem(rowCount, 4, QTableWidgetItem(self.ui.Car.text()))
+        self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.City.text()))
 
-        if self.ui.YesCar.isChecked():
-            self.ui.table_data.setItem(rowCount, 4, QTableWidgetItem(self.ui.YesCar.text()))
-        if self.ui.NoCar.isChecked():
-            self.ui.table_data.setItem(rowCount, 4, QTableWidgetItem(self.ui.NoCar.text()))
-        if self.ui.Cplusplus.isChecked():
-            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.Cplusplus.text()))
         if self.ui.Csharp.isChecked():
-            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.Csharp.text()))
+            self.ui.table_data.setItem(rowCount, 6, QTableWidgetItem(self.ui.Csharp.text()))
         if self.ui.Delphi.isChecked():
-            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.Delphi.text()))
+            self.ui.table_data.setItem(rowCount, 6, QTableWidgetItem(self.ui.Delphi.text()))
+        if self.ui.Cplusplus.isChecked():
+            self.ui.table_data.setItem(rowCount, 6, QTableWidgetItem(self.ui.Cplusplus.text()))
         if self.ui.Python.isChecked():
-            self.ui.table_data.setItem(rowCount, 5, QTableWidgetItem(self.ui.Python.text()))
+            self.ui.table_data.setItem(rowCount, 6, QTableWidgetItem(self.ui.Python.text()))
+        if self.ui.JavaScript.isChecked():
+            self.ui.table_data.setItem(rowCount, 6, QTableWidgetItem(self.ui.JavaScript.text()))
+        if self.ui.PHP.isChecked():
+            self.ui.table_data.setItem(rowCount, 6, QTableWidgetItem(self.ui.PHP.text()))
 
         QMessageBox.information(self, "Data added", "You have successfully added the data to the database !")
 
@@ -84,15 +90,16 @@ class Data_Base(QtWidgets.QMainWindow):
 
         QMessageBox.information(self, "Delete data", "You have successfully deleted the data !")
 
-    def search_person(self):
+    def search_person(self, key):
+        name_search = self.ui.Employeesearch.text()
 
-        text = self.ui.Employeesearch.text()
-        items = self.ui.table_data.findItems(text, Qt.MatchExactly)
-        item = items[0]
-        item.setSelected(True)
-        item.setForeground(QBrush(QColor(255, 0, 0)))
-        row = item.row()
-        self.ui.table_data.verticalScrollBar().setSliderPosition(row)
+        for row in range(self.ui.table_data.rowCount()):
+            matching_items = self.ui.table_data.findItems(name_search, Qt.MatchExactly)
+            if matching_items:
+                item = matching_items[0]
+                item.setSelected(True)
+                item.setForeground(QBrush(QColor(255, 0, 0)))
+                self.ui.table_data.verticalScrollBar().setSliderPosition(row)
 
         QMessageBox.information(self, "Completed !", "Data search completed !")
 
@@ -100,5 +107,5 @@ class Data_Base(QtWidgets.QMainWindow):
 app = QtWidgets.QApplication(sys.argv)
 application = Data_Base()
 application.show()
-application.setWindowOpacity(0.96)
+application.setWindowOpacity(0.95)
 sys.exit(app.exec_())

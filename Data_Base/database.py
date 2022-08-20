@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'database.ui'
+# Form implementation generated from reading ui file 'data_base.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,9 +14,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1051, 614)
+        MainWindow.resize(996, 592)
         font = QtGui.QFont()
         font.setFamily("Rockwell Condensed")
+        font.setPointSize(9)
         MainWindow.setFont(font)
         MainWindow.setStyleSheet("background-color:#22222e;")
         MainWindow.setIconSize(QtCore.QSize(24, 24))
@@ -29,7 +30,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.Employeedatabasetext = QtWidgets.QLabel(self.centralwidget)
-        self.Employeedatabasetext.setGeometry(QtCore.QRect(290, 10, 301, 30))
+        self.Employeedatabasetext.setGeometry(QtCore.QRect(470, 0, 151, 30))
         font = QtGui.QFont()
         font.setFamily("Franklin Gothic Heavy")
         font.setPointSize(24)
@@ -38,7 +39,7 @@ class Ui_MainWindow(object):
         self.Employeedatabasetext.setStyleSheet("color:#f08080")
         self.Employeedatabasetext.setObjectName("Employeedatabasetext")
         self.NameSurname = QtWidgets.QLineEdit(self.centralwidget)
-        self.NameSurname.setGeometry(QtCore.QRect(30, 60, 221, 31))
+        self.NameSurname.setGeometry(QtCore.QRect(10, 70, 221, 31))
         font = QtGui.QFont()
         font.setFamily("Franklin Gothic Heavy")
         font.setPointSize(12)
@@ -52,15 +53,8 @@ class Ui_MainWindow(object):
         self.NameSurname.setText("")
         self.NameSurname.setAlignment(QtCore.Qt.AlignCenter)
         self.NameSurname.setObjectName("NameSurname")
-        self.YesCar = QtWidgets.QCheckBox(self.centralwidget)
-        self.YesCar.setGeometry(QtCore.QRect(40, 320, 43, 20))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.YesCar.setFont(font)
-        self.YesCar.setStyleSheet("color:white")
-        self.YesCar.setObjectName("YesCar")
         self.Addaperson = QtWidgets.QPushButton(self.centralwidget)
-        self.Addaperson.setGeometry(QtCore.QRect(40, 510, 111, 31))
+        self.Addaperson.setGeometry(QtCore.QRect(50, 460, 121, 41))
         font = QtGui.QFont()
         font.setFamily("Copperplate Gothic Bold")
         font.setPointSize(10)
@@ -91,7 +85,7 @@ class Ui_MainWindow(object):
         )
         self.Addaperson.setObjectName("Addaperson")
         self.Deleteaperson = QtWidgets.QPushButton(self.centralwidget)
-        self.Deleteaperson.setGeometry(QtCore.QRect(550, 470, 131, 31))
+        self.Deleteaperson.setGeometry(QtCore.QRect(50, 510, 121, 41))
         font = QtGui.QFont()
         font.setFamily("Copperplate Gothic Bold")
         font.setPointSize(10)
@@ -119,42 +113,17 @@ class Ui_MainWindow(object):
             " }"
         )
         self.Deleteaperson.setObjectName("Deleteaperson")
-        self.Doyouhaveacartext = QtWidgets.QLabel(self.centralwidget)
-        self.Doyouhaveacartext.setGeometry(QtCore.QRect(40, 290, 121, 17))
-        font = QtGui.QFont()
-        font.setFamily("Franklin Gothic Heavy")
-        font.setPointSize(10)
-        font.setItalic(False)
-        self.Doyouhaveacartext.setFont(font)
-        self.Doyouhaveacartext.setStyleSheet("color:#f08080")
-        self.Doyouhaveacartext.setObjectName("Doyouhaveacartext")
-        self.ProgrammingLanguagetext = QtWidgets.QLabel(self.centralwidget)
-        self.ProgrammingLanguagetext.setGeometry(QtCore.QRect(40, 350, 161, 21))
-        font = QtGui.QFont()
-        font.setFamily("Franklin Gothic Heavy")
-        font.setPointSize(10)
-        font.setItalic(False)
-        self.ProgrammingLanguagetext.setFont(font)
-        self.ProgrammingLanguagetext.setStyleSheet("color:#f08080")
-        self.ProgrammingLanguagetext.setObjectName("ProgrammingLanguagetext")
-        self.NoCar = QtWidgets.QCheckBox(self.centralwidget)
-        self.NoCar.setGeometry(QtCore.QRect(110, 320, 38, 20))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.NoCar.setFont(font)
-        self.NoCar.setStyleSheet("color:white")
-        self.NoCar.setObjectName("NoCar")
         self.Addanewemployeetext = QtWidgets.QLabel(self.centralwidget)
-        self.Addanewemployeetext.setGeometry(QtCore.QRect(30, 20, 183, 24))
+        self.Addanewemployeetext.setGeometry(QtCore.QRect(40, 40, 161, 24))
         font = QtGui.QFont()
         font.setFamily("Franklin Gothic Heavy")
-        font.setPointSize(14)
+        font.setPointSize(12)
         font.setItalic(False)
         self.Addanewemployeetext.setFont(font)
         self.Addanewemployeetext.setStyleSheet("color:#f08080")
         self.Addanewemployeetext.setObjectName("Addanewemployeetext")
         self.Height = QtWidgets.QLineEdit(self.centralwidget)
-        self.Height.setGeometry(QtCore.QRect(30, 190, 221, 31))
+        self.Height.setGeometry(QtCore.QRect(10, 160, 221, 31))
         font = QtGui.QFont()
         font.setFamily("Franklin Gothic Heavy")
         font.setPointSize(12)
@@ -169,7 +138,7 @@ class Ui_MainWindow(object):
         self.Height.setAlignment(QtCore.Qt.AlignCenter)
         self.Height.setObjectName("Height")
         self.Weight = QtWidgets.QLineEdit(self.centralwidget)
-        self.Weight.setGeometry(QtCore.QRect(30, 230, 221, 31))
+        self.Weight.setGeometry(QtCore.QRect(10, 210, 221, 31))
         font = QtGui.QFont()
         font.setFamily("Franklin Gothic Heavy")
         font.setPointSize(12)
@@ -183,20 +152,8 @@ class Ui_MainWindow(object):
         self.Weight.setText("")
         self.Weight.setAlignment(QtCore.Qt.AlignCenter)
         self.Weight.setObjectName("Weight")
-        self.Deleteanemployeetext = QtWidgets.QLabel(self.centralwidget)
-        self.Deleteanemployeetext.setGeometry(QtCore.QRect(550, 510, 311, 31))
-        font = QtGui.QFont()
-        font.setFamily("Franklin Gothic Heavy")
-        font.setPointSize(14)
-        font.setItalic(False)
-        self.Deleteanemployeetext.setFont(font)
-        self.Deleteanemployeetext.setStyleSheet("color:#f08080")
-        self.Deleteanemployeetext.setAlignment(
-            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
-        )
-        self.Deleteanemployeetext.setObjectName("Deleteanemployeetext")
         self.Search = QtWidgets.QPushButton(self.centralwidget)
-        self.Search.setGeometry(QtCore.QRect(300, 510, 131, 31))
+        self.Search.setGeometry(QtCore.QRect(480, 510, 111, 41))
         font = QtGui.QFont()
         font.setFamily("Copperplate Gothic Bold")
         font.setPointSize(10)
@@ -225,7 +182,7 @@ class Ui_MainWindow(object):
         )
         self.Search.setObjectName("Search")
         self.Employeesearch = QtWidgets.QLineEdit(self.centralwidget)
-        self.Employeesearch.setGeometry(QtCore.QRect(290, 470, 221, 31))
+        self.Employeesearch.setGeometry(QtCore.QRect(250, 510, 221, 31))
         font = QtGui.QFont()
         font.setFamily("Franklin Gothic Heavy")
         font.setPointSize(12)
@@ -240,87 +197,192 @@ class Ui_MainWindow(object):
         self.Employeesearch.setAlignment(QtCore.Qt.AlignCenter)
         self.Employeesearch.setObjectName("Employeesearch")
         self.Datebirthday = QtWidgets.QDateEdit(self.centralwidget)
-        self.Datebirthday.setGeometry(QtCore.QRect(30, 150, 221, 22))
+        self.Datebirthday.setGeometry(QtCore.QRect(10, 120, 221, 22))
         self.Datebirthday.setStyleSheet(
             "background-color: #22222e;\n" "border:2px solid #f08080;\n" "color:white"
         )
         self.Datebirthday.setCalendarPopup(True)
         self.Datebirthday.setDate(QtCore.QDate(2009, 1, 2))
         self.Datebirthday.setObjectName("Datebirthday")
-        self.Addabirhdaytext = QtWidgets.QLabel(self.centralwidget)
-        self.Addabirhdaytext.setGeometry(QtCore.QRect(30, 110, 128, 24))
-        font = QtGui.QFont()
-        font.setFamily("Franklin Gothic Heavy")
-        font.setPointSize(14)
-        font.setItalic(False)
-        self.Addabirhdaytext.setFont(font)
-        self.Addabirhdaytext.setStyleSheet("color:#f08080")
-        self.Addabirhdaytext.setObjectName("Addabirhdaytext")
         self.table_data = QtWidgets.QTableWidget(self.centralwidget)
         self.table_data.setEnabled(True)
-        self.table_data.setGeometry(QtCore.QRect(290, 50, 645, 401))
+        self.table_data.setGeometry(QtCore.QRect(250, 40, 711, 451))
         font = QtGui.QFont()
         font.setBold(False)
         font.setWeight(50)
         self.table_data.setFont(font)
         self.table_data.setStyleSheet(
-            "background-color: rgb(255, 255, 255);\n"
+            "background-color:rgb(240, 242, 255);\n"
             "selection-background-color: rgb(82, 206, 225);\n"
             "selection-color: rgb(0, 0, 0);"
         )
         self.table_data.setRowCount(0)
-        self.table_data.setColumnCount(6)
+        self.table_data.setColumnCount(7)
         self.table_data.setObjectName("table_data")
         item = QtWidgets.QTableWidgetItem()
+        item.setBackground(QtGui.QColor(255, 255, 255))
         self.table_data.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.table_data.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.table_data.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
+        item.setBackground(QtGui.QColor(255, 255, 255))
         self.table_data.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
         self.table_data.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
         self.table_data.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.table_data.setHorizontalHeaderItem(6, item)
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(30, 390, 151, 71))
+        self.groupBox.setGeometry(QtCore.QRect(20, 360, 191, 81))
         self.groupBox.setStyleSheet("color: rgb(255, 255, 255);")
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
-        self.Cplusplus = QtWidgets.QRadioButton(self.groupBox)
-        self.Cplusplus.setGeometry(QtCore.QRect(10, 10, 47, 20))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.Cplusplus.setFont(font)
-        self.Cplusplus.setStyleSheet("color:white")
-        self.Cplusplus.setObjectName("Cplusplus")
-        self.Delphi = QtWidgets.QRadioButton(self.groupBox)
-        self.Delphi.setGeometry(QtCore.QRect(10, 40, 58, 20))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.Delphi.setFont(font)
-        self.Delphi.setStyleSheet("color:white")
-        self.Delphi.setObjectName("Delphi")
-        self.Csharp = QtWidgets.QRadioButton(self.groupBox)
-        self.Csharp.setGeometry(QtCore.QRect(80, 10, 40, 20))
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.groupBox)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 71, 61))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.Csharp = QtWidgets.QRadioButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setPointSize(10)
         self.Csharp.setFont(font)
         self.Csharp.setStyleSheet("color:white")
         self.Csharp.setObjectName("Csharp")
-        self.Python = QtWidgets.QRadioButton(self.groupBox)
-        self.Python.setGeometry(QtCore.QRect(80, 40, 61, 20))
+        self.verticalLayout.addWidget(self.Csharp)
+        self.Delphi = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.Delphi.setFont(font)
+        self.Delphi.setStyleSheet("color:white")
+        self.Delphi.setObjectName("Delphi")
+        self.verticalLayout.addWidget(self.Delphi)
+        self.Cplusplus = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.Cplusplus.setFont(font)
+        self.Cplusplus.setStyleSheet("color:white")
+        self.Cplusplus.setObjectName("Cplusplus")
+        self.verticalLayout.addWidget(self.Cplusplus)
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.groupBox)
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(100, 10, 83, 61))
+        self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.Python = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(10)
         self.Python.setFont(font)
         self.Python.setStyleSheet("color:white")
         self.Python.setObjectName("Python")
+        self.verticalLayout_2.addWidget(self.Python)
+        self.JavaScript = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.JavaScript.setFont(font)
+        self.JavaScript.setStyleSheet("color:white")
+        self.JavaScript.setObjectName("JavaScript")
+        self.verticalLayout_2.addWidget(self.JavaScript)
+        self.PHP = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.PHP.setFont(font)
+        self.PHP.setStyleSheet("color:white")
+        self.PHP.setObjectName("PHP")
+        self.verticalLayout_2.addWidget(self.PHP)
+        self.Car = QtWidgets.QLineEdit(self.centralwidget)
+        self.Car.setGeometry(QtCore.QRect(10, 260, 221, 31))
+        font = QtGui.QFont()
+        font.setFamily("Franklin Gothic Heavy")
+        font.setPointSize(12)
+        self.Car.setFont(font)
+        self.Car.setStyleSheet(
+            "background-color: #22222e;\n"
+            "border:2px solid #f08080;\n"
+            "border-radius:10;\n"
+            "color:white"
+        )
+        self.Car.setText("")
+        self.Car.setAlignment(QtCore.Qt.AlignCenter)
+        self.Car.setObjectName("Car")
+        self.Addfile = QtWidgets.QPushButton(self.centralwidget)
+        self.Addfile.setGeometry(QtCore.QRect(710, 510, 121, 41))
+        font = QtGui.QFont()
+        font.setFamily("Copperplate Gothic Bold")
+        font.setPointSize(10)
+        self.Addfile.setFont(font)
+        self.Addfile.setStyleSheet(
+            "QPushButton {\n"
+            "     border: 2px solid #8f8f91;\n"
+            "     border-radius: 10px;\n"
+            "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+            "                                       stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+            "     min-width: 80px;\n"
+            " }\n"
+            "\n"
+            " QPushButton:pressed {\n"
+            "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+            "                                       stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+            " }\n"
+            "\n"
+            " QPushButton:flat {\n"
+            "     border: none; /* для плоской кнопки границы нет */\n"
+            " }\n"
+            "\n"
+            " QPushButton:default {\n"
+            "     border-color: navy; /* делаем кнопку по умолчанию выпуклой */\n"
+            " }"
+        )
+        self.Addfile.setObjectName("Addfile")
+        self.City = QtWidgets.QLineEdit(self.centralwidget)
+        self.City.setGeometry(QtCore.QRect(10, 310, 221, 31))
+        font = QtGui.QFont()
+        font.setFamily("Franklin Gothic Heavy")
+        font.setPointSize(12)
+        self.City.setFont(font)
+        self.City.setStyleSheet(
+            "background-color: #22222e;\n"
+            "border:2px solid #f08080;\n"
+            "border-radius:10;\n"
+            "color:white"
+        )
+        self.City.setText("")
+        self.City.setAlignment(QtCore.Qt.AlignCenter)
+        self.City.setObjectName("City")
+        self.Savefile = QtWidgets.QPushButton(self.centralwidget)
+        self.Savefile.setGeometry(QtCore.QRect(840, 510, 121, 41))
+        font = QtGui.QFont()
+        font.setFamily("Copperplate Gothic Bold")
+        font.setPointSize(10)
+        self.Savefile.setFont(font)
+        self.Savefile.setStyleSheet(
+            "QPushButton {\n"
+            "     border: 2px solid #8f8f91;\n"
+            "     border-radius: 10px;\n"
+            "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+            "                                       stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+            "     min-width: 80px;\n"
+            " }\n"
+            "\n"
+            " QPushButton:pressed {\n"
+            "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+            "                                       stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+            " }\n"
+            "\n"
+            " QPushButton:flat {\n"
+            "     border: none; /* для плоской кнопки границы нет */\n"
+            " }\n"
+            "\n"
+            " QPushButton:default {\n"
+            "     border-color: navy; /* делаем кнопку по умолчанию выпуклой */\n"
+            " }"
+        )
+        self.Savefile.setObjectName("Savefile")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1051, 21))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -331,37 +393,33 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "DataBase"))
-        self.Employeedatabasetext.setText(_translate("MainWindow", "Employee database"))
-        self.YesCar.setText(_translate("MainWindow", "Yes"))
+        self.Employeedatabasetext.setText(_translate("MainWindow", "Database"))
         self.Addaperson.setText(_translate("MainWindow", "Add a person"))
         self.Deleteaperson.setText(_translate("MainWindow", "Delete a person"))
-        self.Doyouhaveacartext.setText(_translate("MainWindow", "Do you have a car ?"))
-        self.ProgrammingLanguagetext.setText(
-            _translate("MainWindow", "Programming language?")
-        )
-        self.NoCar.setText(_translate("MainWindow", "No"))
         self.Addanewemployeetext.setText(_translate("MainWindow", "Add a new employee"))
-        self.Deleteanemployeetext.setText(
-            _translate("MainWindow", 'Click index and "delete employee"')
-        )
         self.Search.setText(_translate("MainWindow", "Search"))
-        self.Addabirhdaytext.setText(_translate("MainWindow", "Add a birthday"))
         item = self.table_data.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "name"))
+        item.setText(_translate("MainWindow", "Name"))
         item = self.table_data.horizontalHeaderItem(1)
-        item.setText(_translate("MainWindow", "birhtday"))
+        item.setText(_translate("MainWindow", "Birhtday"))
         item = self.table_data.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "heihgt"))
+        item.setText(_translate("MainWindow", "Height"))
         item = self.table_data.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "weihgt"))
+        item.setText(_translate("MainWindow", "Weihgt"))
         item = self.table_data.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "car"))
+        item.setText(_translate("MainWindow", "Car"))
         item = self.table_data.horizontalHeaderItem(5)
+        item.setText(_translate("MainWindow", "Сity"))
+        item = self.table_data.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "languages"))
-        self.Cplusplus.setText(_translate("MainWindow", "C++"))
-        self.Delphi.setText(_translate("MainWindow", "Delphi"))
         self.Csharp.setText(_translate("MainWindow", "C#"))
+        self.Delphi.setText(_translate("MainWindow", "Delphi"))
+        self.Cplusplus.setText(_translate("MainWindow", "C++"))
         self.Python.setText(_translate("MainWindow", "Python"))
+        self.JavaScript.setText(_translate("MainWindow", "JavaScript"))
+        self.PHP.setText(_translate("MainWindow", "PHP"))
+        self.Addfile.setText(_translate("MainWindow", "Add file"))
+        self.Savefile.setText(_translate("MainWindow", "Save file"))
 
 
 if __name__ == "__main__":
