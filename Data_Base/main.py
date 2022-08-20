@@ -1,6 +1,6 @@
 import sys
 from database import Ui_MainWindow
-from PyQt5.QtCore import Qt, QSortFilterProxyModel
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.QtGui import *
 from PyQt5 import QtCore, QtWidgets
