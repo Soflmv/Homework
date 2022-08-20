@@ -216,7 +216,7 @@ class Ui_MainWindow(object):
             "selection-background-color: rgb(82, 206, 225);\n"
             "selection-color: rgb(0, 0, 0);"
         )
-        self.table_data.setRowCount(1)
+        self.table_data.setRowCount(0)
         self.table_data.setColumnCount(7)
         self.table_data.setObjectName("table_data")
         item = QtWidgets.QTableWidgetItem()
