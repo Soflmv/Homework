@@ -47,12 +47,9 @@ while True:
         elif input_user == "/":
             division()
         else:
-            print("Некорректный ввод !")
+            print("Хочешь выполнить еще какое либо действие?\n"
+                  "Если нет, 'q' выход из программы!")
     except ZeroDivisionError:
         print("Деление на ноль!!!")
     except ValueError:
         print("Нужно вводить только цифры!")
-    finally:
-        print("Хочешь выполнить еще какое либо действие?\n"
-              "Если нет, 'q' выход из программы!")
-
