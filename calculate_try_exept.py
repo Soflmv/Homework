@@ -47,8 +47,7 @@ while True:
         elif input_user == "/":
             division()
         else:
-            print("Хочешь выполнить еще какое либо действие?\n"
-                  "Если нет, 'q' выход из программы!")
+            print("Если ты хочешь выйти нажми 'q' !!!")
     except ZeroDivisionError:
         print("Деление на ноль!!!")
     except ValueError:
