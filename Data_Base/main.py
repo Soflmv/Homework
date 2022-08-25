@@ -1,9 +1,10 @@
 import sys
 from database import Ui_MainWindow
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
+from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox, QFileDialog
 from PyQt5.QtGui import *
 from PyQt5 import QtCore, QtWidgets
+
 
 data_list = []
 
@@ -29,18 +30,8 @@ class Data_Base(QtWidgets.QMainWindow):
         self.ui.Addaperson.clicked.connect(self.save_person)
         self.ui.Deleteaperson.clicked.connect(self.delete_person)
         self.ui.Search.clicked.connect(self.search_person)
-        self.ui.NameSurname.text()
-        self.ui.Datebirthday.date().toString("dd.MM.yyyy")
-        self.ui.Height.text()
-        self.ui.Weight.text()
-        self.ui.Car.text()
-        self.ui.Csharp.text()
-        self.ui.Delphi.text()
-        self.ui.Cplusplus.text()
-        self.ui.Python.text()
-        self.ui.JavaScript.text()
-        self.ui.PHP.text()
-
+        self.ui.Addfile.clicked.connect(self.add_file)
+        self.ui.Savefile.clicked.connect(self.save_file)
 
     def save_person(self):
 
@@ -90,7 +81,7 @@ class Data_Base(QtWidgets.QMainWindow):
 
         QMessageBox.information(self, "Delete data", "You have successfully deleted the data !")
 
-    def search_person(self, key):
+    def search_person(self):
         name_search = self.ui.Employeesearch.text()
 
         for row in range(self.ui.table_data.rowCount()):
@@ -102,6 +93,27 @@ class Data_Base(QtWidgets.QMainWindow):
                 self.ui.table_data.verticalScrollBar().setSliderPosition(row)
 
         QMessageBox.information(self, "Completed !", "Data search completed !")
+
+    def add_file(self):
+        file = QFileDialog.getOpenFileName(self, 'Open File', 'C:/Users/User/Desktop', 'Python File (*.py)')
+
+        with open(file[0], "r") as datafile:
+            data = datafile.read()
+
+        for row_number, row_data in enumerate(data):
+            self.ui.table_data.insertRow(row_number)
+            for data in enumerate(row_data):
+                self.ui.table_data.setItem(row_number, 0, QTableWidgetItem(str(data)))
+                self.ui.table_data.setItem(row_number, 1, QTableWidgetItem(str(data)))
+                self.ui.table_data.setItem(row_number, 2, QTableWidgetItem(str(data)))
+                self.ui.table_data.setItem(row_number, 3, QTableWidgetItem(str(data)))
+                self.ui.table_data.setItem(row_number, 4, QTableWidgetItem(str(data)))
+                self.ui.table_data.setItem(row_number, 5, QTableWidgetItem(str(data)))
+                self.ui.table_data.setItem(row_number, 6, QTableWidgetItem(str(data)))
+
+    def save_file(self):
+        save_data = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', 'C:/Users/User/Desktop',
+                                                          'Python File (*.py)')
 
 
 app = QtWidgets.QApplication(sys.argv)
