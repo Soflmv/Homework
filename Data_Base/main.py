@@ -96,7 +96,7 @@ class Data_Base(QtWidgets.QMainWindow):
         QMessageBox.information(self, "Completed !", "Data search completed !")
 
     def add_file(self):
-        file = QFileDialog.getOpenFileName(self, 'Open File', 'C:/Users/User/Desktop', 'Json File (*.json)')
+        file = QFileDialog.getOpenFileName(self, 'Open File', '/.', 'Json File (*.json)')
 
         with open(file[0], "r") as datafile:
             data = json.load(datafile)
