@@ -1,4 +1,5 @@
 import sys
+import json
 from database import Ui_MainWindow
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox, QFileDialog
@@ -95,25 +96,28 @@ class Data_Base(QtWidgets.QMainWindow):
         QMessageBox.information(self, "Completed !", "Data search completed !")
 
     def add_file(self):
-        file = QFileDialog.getOpenFileName(self, 'Open File', 'C:/Users/User/Desktop', 'Python File (*.py)')
+        file = QFileDialog.getOpenFileName(self, 'Open File', 'C:/Users/User/Desktop', 'Json File (*.json)')
 
         with open(file[0], "r") as datafile:
-            data = datafile.read()
+            data = json.load(datafile)
 
-        for row_number, row_data in enumerate(data):
-            self.ui.table_data.insertRow(row_number)
-            for data in enumerate(row_data):
-                self.ui.table_data.setItem(row_number, 0, QTableWidgetItem(str(data)))
-                self.ui.table_data.setItem(row_number, 1, QTableWidgetItem(str(data)))
-                self.ui.table_data.setItem(row_number, 2, QTableWidgetItem(str(data)))
-                self.ui.table_data.setItem(row_number, 3, QTableWidgetItem(str(data)))
-                self.ui.table_data.setItem(row_number, 4, QTableWidgetItem(str(data)))
-                self.ui.table_data.setItem(row_number, 5, QTableWidgetItem(str(data)))
-                self.ui.table_data.setItem(row_number, 6, QTableWidgetItem(str(data)))
+        self.ui.table_data.setRowCount(len(data))
+        row = 0
+        for person in data:
+            self.ui.table_data.setItem(row, 0, QTableWidgetItem(str(person["Name"])))
+            self.ui.table_data.setItem(row, 1, QTableWidgetItem(str(person["Birthday"])))
+            self.ui.table_data.setItem(row, 2, QTableWidgetItem(str(person["Height"])))
+            self.ui.table_data.setItem(row, 3, QTableWidgetItem(str(person["Weight"])))
+            self.ui.table_data.setItem(row, 4, QTableWidgetItem(str(person["Car"])))
+            self.ui.table_data.setItem(row, 5, QTableWidgetItem(str(person["City"])))
+            self.ui.table_data.setItem(row, 6, QTableWidgetItem(str(person["Languages"])))
+            row += 1
+
+        QMessageBox.information(self, "Completed !", "File opened successfully !")
 
     def save_file(self):
         save_data = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', 'C:/Users/User/Desktop',
-                                                          'Python File (*.py)')
+                                                          'Json File (*.json)')
 
 
 app = QtWidgets.QApplication(sys.argv)
