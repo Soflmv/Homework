@@ -116,8 +116,19 @@ class Data_Base(QtWidgets.QMainWindow):
         QMessageBox.information(self, "Completed !", "File opened successfully !")
 
     def save_file(self):
-        save_data = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', 'C:/Users/User/Desktop',
-                                                          'Json File (*.json)')
+
+        num_rows = self.ui.table_data.rowCount()
+        num_cols = self.ui.table_data.columnCount()
+
+        for col in range(num_cols):
+            rows = []
+            for row in range(num_rows):
+                item = self.ui.table_data.item(row, col)
+                rows.append(item.text() if item else '')
+            data_list.append(rows)
+
+        with open("jsonfile.json", "w") as file:
+            json.dump(data_list, file, indent=4)
 
 
 app = QtWidgets.QApplication(sys.argv)
