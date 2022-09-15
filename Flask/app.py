@@ -20,7 +20,6 @@ def bubble_sort(mas):
 
 n = 20
 mas = [random.randint(1, 20) for i in range(n)]
-bubble_sort(mas)
 
 
 # Вставками
@@ -38,7 +37,6 @@ def insertion_sort(lst):
 
 n = 20
 lst = [random.randint(1, 20) for k in range(n)]
-insertion_sort(lst)
 
 
 # Выбором
@@ -53,7 +51,6 @@ def selection_sort(obj):
 
 n = 20
 obj = [random.randint(1, 20) for m in range(n)]
-selection_sort(obj)
 
 
 # Слиянием
@@ -85,25 +82,36 @@ def merge_sort(nums):
 
 n = 20
 nums = [random.randint(1, 20) for el in range(n)]
-merge_sort(nums)
 
 
 # Быстрая
-def quick_sort(num):
+def quick_sort(alist, start, end):
+    if end - start > 1:
+        p = partition(alist, start, end)
+        quick_sort(alist, start, p)
+        quick_sort(alist, p + 1, end)
 
-    if len(num) <= 1:
-        return num
-    elem = num[0]
-    left = list(filter(lambda x: x < elem, num))
-    center = [i for i in num if i == elem]
-    right = list(filter(lambda x: x > elem, num))
 
-    return quick_sort(left) + center + quick_sort(right)
+def partition(alist, start, end):
+    pivot = alist[start]
+    i = start + 1
+    j = end - 1
+
+    while True:
+        while (i <= j and alist[i] <= pivot):
+            i = i + 1
+        while (i <= j and alist[j] >= pivot):
+            j = j - 1
+
+        if i <= j:
+            alist[i], alist[j] = alist[j], alist[i]
+        else:
+            alist[start], alist[j] = alist[j], alist[start]
+            return j
 
 
 n = 20
-num = [random.randint(1, 20) for j in range(n)]
-quick_sort(num)
+lis = [random.randint(1, 20) for k in range(n)]
 
 
 @app.route('/')
@@ -113,36 +121,36 @@ def index():
     bubble_sort(mas)
     time.sleep(1)
     endTime = time.time()
-    totalTime1 = (endTime - startTime).__round__(6)
+    totalTime1 = (endTime - startTime).__round__(7)
 
     # Вставками
     startTime = time.time()
     insertion_sort(lst)
     time.sleep(1)
     endTime = time.time()
-    totalTime2 = (endTime - startTime).__round__(6)
+    totalTime2 = (endTime - startTime).__round__(7)
 
     # Выбором
     startTime = time.time()
     selection_sort(obj)
     time.sleep(1)
     endTime = time.time()
-    totalTime3 = (endTime - startTime).__round__(6)
+    totalTime3 = (endTime - startTime).__round__(7)
 
     # Слиянием
     startTime = time.time()
     merge_sort(nums)
     time.sleep(1)
     endTime = time.time()
-    totalTime4 = (endTime - startTime).__round__(6)
+    totalTime4 = (endTime - startTime).__round__(7)
 
 
     # Быстрая
     startTime = time.time()
-    quick_sort(num)
+    quick_sort(lis, start=0, end=20)
     time.sleep(1)
     endTime = time.time()
-    totalTime5 = (endTime - startTime).__round__(6)
+    totalTime5 = (endTime - startTime).__round__(7)
 
     return render_template('index.html',
                            total=totalTime1, total2=totalTime2, total3=totalTime3, total4=totalTime4, total5=totalTime5)
