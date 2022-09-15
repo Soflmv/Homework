@@ -152,8 +152,8 @@ def index():
     endTime = time.time()
     totalTime5 = (endTime - startTime).__round__(7)
 
-    return render_template('index.html',
-                           total=totalTime1, total2=totalTime2, total3=totalTime3, total4=totalTime4, total5=totalTime5)
+    return render_template('index.html',total=totalTime1, total2=totalTime2, total3=totalTime3, total4=totalTime4,
+                           total5=totalTime5)
 
 
 if __name__ == "__main__":
