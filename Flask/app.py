@@ -103,7 +103,7 @@ def quick_sort(num):
 
 n = 20
 num = [random.randint(1, 20) for j in range(n)]
-merge_sort(num)
+quick_sort(num)
 
 
 @app.route('/')
