@@ -37,7 +37,7 @@ def insertion_sort(lst):
 
 
 n = 20
-lst = [random.randint(1, 20) for i in range(n)]
+lst = [random.randint(1, 20) for k in range(n)]
 insertion_sort(lst)
 
 
@@ -52,7 +52,7 @@ def selection_sort(obj):
 
 
 n = 20
-obj = [random.randint(1, 20) for i in range(n)]
+obj = [random.randint(1, 20) for m in range(n)]
 selection_sort(obj)
 
 
