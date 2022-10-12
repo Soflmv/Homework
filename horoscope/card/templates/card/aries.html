@@ -1,0 +1,14 @@
+{% extends 'card/main.html'%}
+
+{% block title %}Овен{% endblock %}
+
+
+{% block content %}
+    <div class="horoscope_data">
+        <p>{% for obj in data %}
+                {% for i in obj %}
+                    {{i}}
+                {% endfor %}</p>
+            {% endfor %}
+    </div>
+{% endblock %}

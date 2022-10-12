@@ -1,0 +1,43 @@
+body {
+    background: #008080;
+}
+
+header {
+    background: #2c3e50;
+}
+
+h2 {
+    color: #fff;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+a {
+    font-size: 16px;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #FFA500;
+    text-decoration: none;
+}
+
+li {
+    display: inline;
+}
+
+.horoscope_data {
+    color: #fff;
+    font-size: 17px;
+    margin-top: 120px;
+    text-align: center;
+    width: 50%;
+    margin-left: 480px;
+}
