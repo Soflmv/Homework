@@ -11,37 +11,40 @@
     <link rel="stylesheet" href="{% static 'card/css/style.css' %}">
 </head>
 <body>
-    <header align="center">
-        <a href="{% url 'main' %}"><h2>Гороскоп на сегодня</h2></a>
-        <ul>
-            <li><a href="{% url 'aries' %}">Овен</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'leo' %}">Лев</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'sagittarius' %}">Стрелец</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'taurus' %}">Телец</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'virgo' %}">Дева</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'capricorn' %}">Козерог</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'gemini' %}">Близнецы</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'libra' %}">Весы</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'aquarius' %}">Водолей</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'cancer' %}">Рак</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'scorpio' %}">Скорпион</a></li>
-            <li><a>|</a></li>
-            <li><a href="{% url 'pisces' %}">Рыбы</a></li>
-        </ul>
-    </header>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+<header align="center">
+    <a href="{% url 'main' %}"><h2>Гороскоп на сегодня</h2></a>
+    <ul>
+        <li><a href="{% url 'aries' %}">Овен</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'leo' %}">Лев</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'sagittarius' %}">Стрелец</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'taurus' %}">Телец</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'virgo' %}">Дева</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'capricorn' %}">Козерог</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'gemini' %}">Близнецы</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'libra' %}">Весы</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'aquarius' %}">Водолей</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'cancer' %}">Рак</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'scorpio' %}">Скорпион</a></li>
+        <li><a>|</a></li>
+        <li><a href="{% url 'pisces' %}">Рыбы</a></li>
+    </ul>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>
+
+</footer>
 </body>
 </html>
