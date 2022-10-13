@@ -10,7 +10,7 @@ def aries(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -35,7 +35,7 @@ def leo(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -60,7 +60,7 @@ def sagittarius(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -85,7 +85,7 @@ def taurus(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -110,7 +110,7 @@ def virgo(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -135,7 +135,7 @@ def capricorn(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -160,7 +160,7 @@ def gemini(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -185,7 +185,7 @@ def libra(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -210,7 +210,7 @@ def aquarius(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -235,7 +235,7 @@ def cancer(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -260,7 +260,7 @@ def scorpio(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
@@ -285,7 +285,7 @@ def pisces(request):
     try:
         connect = psycopg2.connect(
             user="postgres",
-            password="069miroslav1993",
+            password="**************",
             host="127.0.0.1",
             port="5432",
             database="horoscope"
